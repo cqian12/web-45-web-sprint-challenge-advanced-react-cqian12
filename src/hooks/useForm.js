@@ -11,9 +11,11 @@ const initialValue = {
   };
 
 const useCheckoutState = () => {
+  //states used in CheckoutForm
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [values, setValues] = useState(initialValue);
 
+  //functions that modify state used in CheckoutForm
   const handleChanges = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
@@ -23,6 +25,7 @@ const useCheckoutState = () => {
     setShowSuccessMessage(true);
   };
 
+  //returns states, functions to be used in CheckoutForm
   return [showSuccessMessage, values, handleChanges, handleSubmit]
 }
 

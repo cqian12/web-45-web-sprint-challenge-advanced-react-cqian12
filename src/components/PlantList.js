@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import axios from "axios";
 
 export default class PlantList extends Component {
@@ -14,7 +14,7 @@ export default class PlantList extends Component {
     axios.get('http://localhost:3333/plants')
       .then(res => {
         this.setState({...this.state,plants:res.data})
-        console.log(this.state.plants)
+        //console.log(this.state.plants)
       })
       .catch(err => console.log(err))
   }
